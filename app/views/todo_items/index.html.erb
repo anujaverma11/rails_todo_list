@@ -1,0 +1,25 @@
+<table>
+	<th>
+		<td>Item Name</td>
+		<td>Status</td>
+	</th>
+
+	<tr>
+		<% @list.each do |item| %>
+		<td><%= item.name %></td>
+		<td><%= item.completed %></td>
+		<% end %>
+	</tr>
+</table>
+
+
+<%= form_for :todo_item, url: todo_items_path do |f| %>
+<p>
+	<%= f.label :name %><br>
+	<%= f.text_field :name %>
+</p>
+
+<p>
+	<%= f.submit %>
+</p>
+<% end %>
